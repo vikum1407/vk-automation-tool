@@ -32,6 +32,8 @@ public class DataPicker_DropDown {
         Select year_drp = new Select(yearEle);
         year_drp.selectByVisibleText("1991");
 
+
+        //Select date
         String date = "14";
 
         List<WebElement> allDates = driver.findElements(By.xpath("//table[@class='ui-datepicker-calendar']//td"));
