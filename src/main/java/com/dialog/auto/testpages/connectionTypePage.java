@@ -13,14 +13,16 @@ import java.util.List;
 public class connectionTypePage extends TestBase {
 
 
-    @FindBy(xpath = "//div[@class='slick-track']")
+    @FindBy(xpath = "//div[@class='card dtv-card level-2 text-center my-3 mx-2 mx-xl-3 slick-slide slick-current slick-active']//a[@id='learn-more-link']")
     WebElement planTypes;
+    //*[@con_type='postpaid']
 
-    //@FindBy(xpath = "(//h5[@class='mt-4'][contains(text(),'Rs.')])[6]")
-    @FindBy(xpath = "//div[@class='card dtv-card level-2 text-center my-3 mx-2 mx-xl-3 slick-slide slick-active']//a[@class='btn btn-danger o2a-package-select--continue' and text()='Select']")
+
+    @FindBy(xpath = "//*[@id='6112394c95a4c600f9819c72']")
     WebElement type2280;
 
     List<WebElement> allPlanTypes = driver.findElements(By.xpath("//div[@class='slick-list draggable']"));
+    ////div[@class='slick-list draggable']
 
     public connectionTypePage(){
         PageFactory.initElements(driver,this);
@@ -29,8 +31,13 @@ public class connectionTypePage extends TestBase {
     public void planTypesMethod(List<WebElement> options, String value){
         for (WebElement allPlans:options){
             if (allPlans.getText().equals(value)){
-                //allPlans.click();
-                type2280.click();
+        /*        //allPlans.click();
+                try {
+                    Thread.sleep(3000);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+                plan2280.click();*/
                 break;
             }
         }
@@ -39,13 +46,18 @@ public class connectionTypePage extends TestBase {
     public void clickSelectedMobileType(){
 
         Actions action = new Actions(driver);
-        action.moveToElement((WebElement) planTypes);
+        action.moveToElement(planTypes);
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         action.perform();
 
         planTypesMethod(allPlanTypes," Rs.   2280.00");
-        Assert.assertEquals(" Rs.   2280.00"," Rs.   2280.00");
+        //Assert.assertEquals(" Rs.   2280.00"," Rs.   2280.00");
         try {
-            Thread.sleep(2000);
+            Thread.sleep(3000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
@@ -53,6 +65,8 @@ public class connectionTypePage extends TestBase {
 
         //JavascriptExecutor js = (JavascriptExecutor) driver;
         //js.executeScript("arguments[0].click();",commonPlanSelection(plan2280,"Rs. 2280 Plan"));
+
+        //return new purchaseASim();
 
     }
 }

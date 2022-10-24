@@ -53,7 +53,7 @@ public class TestBase {
         driver.manage().timeouts().implicitlyWait(TestUtil.IMPLICITY_WAIT, TimeUnit.MILLISECONDS);
         //driver.manage().timeouts().pageLoadTimeout(TestUtil.PAGE_LOAD_TIMEOUT, TimeUnit.MILLISECONDS);
 
-        driver.get(prop.getProperty("url1"));
+        driver.get(prop.getProperty("url"));
     }
 
 

@@ -1,25 +1,23 @@
 package com.dialog.auto.tests;
 
 import com.dialog.auto.testbase.TestBase;
-import com.dialog.auto.testpages.connectionTypePage;
-import com.dialog.auto.testpages.dialogHomePage;
-import com.dialog.auto.testpages.mobileProductAndServicePage;
-import com.dialog.auto.testpages.mobileRatesPage;
+import com.dialog.auto.testpages.*;
+import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-public class connectionTypesTestPage extends TestBase {
+public class purchaseASimTestPage extends TestBase {
 
     dialogHomePage dialogHomePage;
     mobileRatesPage mobileRatesPage;
     mobileProductAndServicePage mobileProductAndServicePage;
     connectionTypePage connectionTypePage;
+    purchaseASim purchaseASim;
 
-    public connectionTypesTestPage(){
+    public purchaseASimTestPage(){
         super();
     }
-
 
     @BeforeMethod
     public void setUpMethod(){
@@ -33,16 +31,15 @@ public class connectionTypesTestPage extends TestBase {
     }
 
     @Test
-    public void clickSelectedMobileType(){
-        connectionTypePage.clickSelectedMobileType();
+    public void validateHeadLine(){
+        purchaseASim.validateHeadLine();
+
     }
-
-
 
 
     @AfterMethod
     public void tierDownMethod(){
 
-       // driver.quit();
+        driver.quit();
     }
 }

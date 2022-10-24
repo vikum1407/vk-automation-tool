@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="My Automation Suite">
+
+    <listeners>
+        <listener class-name="com.ExtentReportListner.ExtentReportListener" />
+    </listeners>
+
+
+    <test name="Dialog Website">
+        <classes>
+            <class name="com.dialog.auto.tests.dialogHomeTestPage"></class>
+            <class name="com.dialog.auto.tests.mobileProductAServiceTestPage"></class>
+            <class name="com.dialog.auto.tests.mobileRatesTestPage"></class>
+            <class name="com.dialog.auto.tests.connectionTypesTestPage"></class>
+            <class name="com.demo.auto.tests.ElementsTestPage"></class>
+        </classes>
+    </test>
+</suite>

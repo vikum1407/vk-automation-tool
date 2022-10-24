@@ -29,7 +29,8 @@ public class Elements_MainPage extends TestBase {
         return new Elements_TextBoxPage();
     }
 
-    public void validateElementsHeader(){
-        Assert.assertEquals(elementsHeader,"Elements");
+    public String validateElementsHeader(){
+        String header = elementsHeader.getText();
+        return header;
     }
 }

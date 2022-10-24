@@ -3,6 +3,7 @@ package com.demo.auto.tests;
 import com.demo.auto.Elements_MainPage;
 import com.demo.auto.Elements_TextBoxPage;
 import com.dialog.auto.testbase.TestBase;
+import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -30,7 +31,8 @@ public class ElementsTestPage extends TestBase {
 
     @Test
     public void validateElementsHeader(){
-        elements_mainPage.validateElementsHeader();
+        //elements_mainPage.validateElementsHeader();
+        Assert.assertEquals(elements_mainPage.validateElementsHeader(),"Elements");
     }
 
 

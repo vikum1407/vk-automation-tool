@@ -38,6 +38,6 @@ public class mobileRatesTestPage extends TestBase {
 
     @AfterMethod
     public void tierDownMethod(){
-        driver.quit();
+        //driver.quit();
     }
 }

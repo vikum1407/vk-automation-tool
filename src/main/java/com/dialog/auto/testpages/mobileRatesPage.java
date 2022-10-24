@@ -18,9 +18,12 @@ public class mobileRatesPage extends TestBase {
 
     @FindBy(xpath = "//div[@class='pp-slider-block']//a[@id='PostpaidPlan1950']")
     WebElement plan2280;
+    //PostpaidPlan1200
+    //PostpaidPlan1950
 
-    List<WebElement> allMobilePlans = driver.findElements(By.xpath("//div[@class='pp-slider-block']//h2"));
-
+    List<WebElement> allMobilePlans = driver.findElements(By.xpath("section[@class='pp-valued-plans']//div[@class='container container-sm container-full']//div[2]"));
+    //#popplans > div > div
+    ////section[@class='pp-valued-plans']//div[@class='container container-sm container-full']//div[2]
 
     public mobileRatesPage(){
         PageFactory.initElements(driver,this);
@@ -30,8 +33,13 @@ public class mobileRatesPage extends TestBase {
     public void commonPlanSelection(List<WebElement> options, String value){
         for (WebElement allPlans:options){
             if (allPlans.getText().equals(value)){
-                //allPlans.click();
-                plan2280.click();
+        /*        //allPlans.click();
+                try {
+                    Thread.sleep(3000);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+                plan2280.click();*/
                 break;
             }
         }
@@ -40,11 +48,21 @@ public class mobileRatesPage extends TestBase {
     public connectionTypePage clickSelectedMobileRatePlan(){
 
         Actions action = new Actions(driver);
-        action.moveToElement((WebElement) plans);
+        action.moveToElement(plans);
+        /*try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }*/
         action.perform();
 
         commonPlanSelection(allMobilePlans,"Rs. 2280 Plan");
-        Assert.assertEquals("Rs. 2280 Plan","Rs. 2280 Plan");
+        //Assert.assertEquals("Rs. 2280 Plan","Rs. 2280 Plan");
+        try {
+            Thread.sleep(7000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         plan2280.click();
 
         //JavascriptExecutor js = (JavascriptExecutor) driver;
