@@ -1,6 +1,7 @@
 package com.nopCommerce.stepDefs;
 
 import com.nopcommerce.testbase.TestBase;
+import com.nopcommerce.testpages.CatalogPage;
 import com.nopcommerce.testpages.LoginPage;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
@@ -41,4 +42,32 @@ public class LoginStepDef extends TestBase {
         LoginPage loginPage = new LoginPage(driver);
         Assert.assertTrue(loginPage.checkNopCommerceLogo(), String.valueOf(true));
     }
+
+    //==========================================
+
+ /*   @And("I click the products tab under catalog")
+    public void iClickTheProductsTabUnderCatalog() throws InterruptedException {
+        LoginPage loginPage = new LoginPage(driver);
+        loginPage.clickProductBtn();
+    }
+
+    @Then("I should see the products title")
+    public void iShouldSeeTheProductsTitle() {
+        LoginPage loginPage = new LoginPage(driver);
+        loginPage.isDisplayDataTable();
+    }
+
+    @And("I should pass product name")
+    public void iShouldPassProductName() {
+        LoginPage loginPage = new LoginPage(driver);
+        loginPage.productNameSend(prop.getProperty("productName"));
+    }
+
+    @Then("I click search button")
+    public void iClickSearchButton() {
+        LoginPage loginPage = new LoginPage(driver);
+        loginPage.clickSearchBtn();
+    }
+*/
+
 }

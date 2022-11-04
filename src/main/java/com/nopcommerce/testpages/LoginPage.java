@@ -26,6 +26,30 @@ public class LoginPage extends TestBase {
     @FindBy(xpath = "//h1[normalize-space()='Dashboard']")
     WebElement dashboardHeader;
 
+    //==========================
+    @FindBy(xpath = "//p[normalize-space()='Catalog']")
+    WebElement catalogBtn;
+
+    @FindBy(xpath = "(//li[@class='nav-item'])[7]")
+    WebElement productTab;
+
+    @FindBy(xpath = "//h1[normalize-space()='Products']")
+    WebElement pageHeader2;
+
+    @FindBy(xpath = "//input[@id='SearchProductName']")
+    WebElement productName;
+
+    @FindBy(xpath = "//button[@id='search-products']")
+    WebElement searchBtn;
+
+    @FindBy(xpath = "//div[@id='products-grid_wrapper']//div[@class='row']")
+    WebElement searchBox;
+
+    @FindBy(xpath = "//div[@id='products-grid_wrapper']//div[@class='row']//div//div//td")
+    WebElement tableData;
+
+    //========================
+
     public LoginPage(WebDriver driver){
         PageFactory.initElements(TestBase.driver,this);
     }
@@ -52,7 +76,7 @@ public class LoginPage extends TestBase {
             System.out.println("Error occured when login button");
         }
 
-        return new DashoardsPage();
+        return new DashoardsPage(driver);
     }
 
     public boolean checkNopCommerceLogo(){
@@ -64,4 +88,31 @@ public class LoginPage extends TestBase {
 
         return dashboardHeader.getText();
     }
+
+   /* //===========================
+
+    public void clickProductBtn() throws InterruptedException {
+        catalogBtn.click();
+        Thread.sleep(1000);
+        productTab.click();
+    }
+
+    public boolean isDisplayHeader(){
+        return pageHeader2.isDisplayed();
+    }
+
+    public CatalogPage clickSearchBtn(){
+        searchBtn.click();
+
+        return new CatalogPage();
+    }
+
+    public void productNameSend(String proName){
+        productName.sendKeys(proName);
+    }
+
+    public boolean isDisplayDataTable(){
+        return searchBox.isDisplayed();
+    }*/
+
 }

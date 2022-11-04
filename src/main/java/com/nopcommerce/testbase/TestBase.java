@@ -11,11 +11,16 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.time.Duration;
 import java.util.Properties;
+import java.util.logging.Logger;
 
 public class TestBase {
 
     public static WebDriver driver;
     public static Properties prop;
+    public static boolean isInitialized;
+    public static boolean isBrowserOpened=false;
+
+    private final static Logger logger = Logger.getLogger(TestBase.class.getName());
 
     public TestBase(){
         try {
@@ -42,6 +47,16 @@ public class TestBase {
         driver.manage().window().maximize();
         driver.manage().deleteAllCookies();
         driver.manage().timeouts().implicitlyWait(Duration.ofMillis(3000));
+    }
+
+    public void closeAllBrowsers() {
+        if(driver != null){
+            driver.quit();
+        }
+        driver = null;
+        isInitialized = false;
+        isBrowserOpened = false;
+        System.out.println("After Test");
     }
 }
 

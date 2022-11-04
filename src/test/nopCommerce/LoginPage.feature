@@ -1,5 +1,6 @@
 Feature: Login page automation
 
+  @nopCom
   Scenario Outline: validate nopCommerce websites
     Given I am in nopCommerce login page
     When I enter login credentials

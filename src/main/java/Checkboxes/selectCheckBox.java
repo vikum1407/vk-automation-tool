@@ -8,9 +8,12 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.time.Duration;
 import java.util.List;
+import java.util.logging.LogManager;
+import java.util.logging.Logger;
 
 public class selectCheckBox {
     public static void main(String[] args) {
+
 
         WebDriverManager.chromedriver().setup();
         WebDriver driver = new ChromeDriver();
