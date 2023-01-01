@@ -1,4 +1,4 @@
-package AlertsAndPopups;
+package HeadlessBrowser;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.Alert;
@@ -6,15 +6,18 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxOptions;
 
-public class Alerts {
+public class FirefoxHeadlessBrowser {
+    public static void main(String[] args) throws InterruptedException {
 
-    public static WebDriver driver;
+        WebDriver driver;
 
-    public static void main(String args[]) throws InterruptedException {
-        WebDriverManager.chromedriver().setup();
-        driver = new ChromeDriver();
+        WebDriverManager.firefoxdriver().setup();
+        FirefoxOptions firefoxOptions = new FirefoxOptions();
+        firefoxOptions.setHeadless(true);
+        driver = new FirefoxDriver(firefoxOptions);
 
         driver.get("https://the-internet.herokuapp.com/javascript_alerts");
 
@@ -45,7 +48,8 @@ public class Alerts {
         Thread.sleep(3000);
         alertWindow.accept();
 
-        driver.quit();
+        System.out.println("Web Title: "+driver.getTitle());
 
+        driver.quit();
     }
 }

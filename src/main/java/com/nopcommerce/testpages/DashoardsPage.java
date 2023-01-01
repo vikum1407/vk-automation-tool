@@ -90,6 +90,9 @@ public class DashoardsPage extends TestBase {
     @FindBy(xpath = "//button[@id='product-editor-settings']")
     WebElement settingBtn;
 
+    @FindBy(xpath = "//p[normalize-space()='Shipments']")
+    WebElement shipmentTab;
+
     public DashoardsPage(WebDriver driver){
         PageFactory.initElements(TestBase.driver,this);
     }
@@ -239,6 +242,8 @@ public class DashoardsPage extends TestBase {
     public boolean validateSettingBtn(){
         return settingBtn.isDisplayed();
     }
+
+
 
 
 }
