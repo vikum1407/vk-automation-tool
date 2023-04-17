@@ -48,7 +48,7 @@ public class ChromeHeadlessBrowser {
         Thread.sleep(3000);
         alertWindow.accept();
 
-        System.out.println("Web Title: "+driver.getTitle());
+                System.out.println("Web Title: "+driver.getTitle());
 
         driver.quit();
     }

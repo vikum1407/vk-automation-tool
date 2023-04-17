@@ -18,8 +18,6 @@ public class TestBase {
     public static Properties prop;
     public static WebDriver driver;
 
-    //ChromeOptions options = new ChromeOptions();
-    //options.addArguments("");
 
     public TestBase(){
         try {
@@ -55,7 +53,4 @@ public class TestBase {
 
         driver.get(prop.getProperty("url"));
     }
-
-
-
 }
