@@ -18,12 +18,21 @@ public class practice {
 
         driver.get("https://itera-qa.azurewebsites.net/home/automation");
 
-        List<WebElement> dayList = driver.findElements(By.xpath("//*[contains(@id,'day')]"));
-        for (WebElement list:dayList){
-            String attribute=list.getAttribute("id");
-            if (attribute.equals("thursday")){
-                list.click();
+        List<WebElement> days = driver.findElements(By.xpath("//input[@class='form-check-input' and contains(@id, 'day')]"));
+        for (WebElement day:days){
+            String Monday = day.getAttribute("id");
+            if (Monday.equals("Monday")){
+                day.click();
             }
         }
+
+        for (int i=0; i<days.size(); i++){
+            String web = days.get(i).getAttribute("id");
+            if (web.equals("Sunday")){
+                days.get(i).click();
+            }
+        }
+
+
     }
 }

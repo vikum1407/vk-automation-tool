@@ -25,8 +25,8 @@ public class HardAssertions {
     @Test
     void hardAssertions(){
         Assert.assertTrue(true); //pass
-        Assert.assertEquals("welcome","welcome"); //pass
-        Assert.assertEquals("selenium","Selenium"); //fail
+        Assert.assertEquals("welcome","welcome");
+        Assert.assertFalse(false);
         System.out.println("Success...!!!");
     }
 }

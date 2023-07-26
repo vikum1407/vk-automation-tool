@@ -14,40 +14,27 @@ import java.util.List;
 
 public class practice {
 
+    public static WebDriver driver;
+
     public static void main(String[] args) throws InterruptedException {
 
-       WebDriverManager.firefoxdriver().setup();
-       WebDriver driver = new FirefoxDriver();
+       WebDriverManager.chromedriver().setup();
+       driver = new FirefoxDriver();
 
        driver.get("https://cosmocode.io/automation-practice-webtable/");
        driver.manage().window().maximize();
 
-       WebElement table = driver.findElement(By.cssSelector("#countries > tbody"));
-        Actions actions = new Actions(driver);
-        actions.moveToElement(table).perform();
+       List<WebElement> rows = driver.findElements(By.xpath("//tbody/tr"));
+       WebElement country = driver.findElement(By.xpath("//tbody/tr[14]/td[2]"));
 
-        Thread.sleep(2000);
+        System.out.println(rows.size());
 
-        List<WebElement> tableRows = driver.findElements(By.xpath("//table[@id='countries']/tbody/tr"));
-        int rowCount = tableRows.size();
-        System.out.println("Rows Count: "+rowCount);
+        for (int i=0; i<rows.size(); i++){
+            WebElement baharen = driver.findElement(By.xpath("//tbody/tr["+i+"]/td[2]"));
 
-        String countryName = driver.findElement(By.xpath("//table[@id='countries']/tbody/tr[2]/td[2]")).getText();
-        System.out.println("Country Value: "+countryName);
-
-       //find 'Algeria' currency
-
-        for (int i=0; i<rowCount; i++){
-
-            String algoria = driver.findElement(By.xpath("//table[@id='countries']/tbody/tr["+i+"]/td[2]")).getText();
-
-            if (algoria.equals("Algeria")){
-
-                String currency = driver.findElement(By.xpath("//table[@id='countries']/tbody/tr["+i+"]/td[3]")).getText();
-                System.out.println("Algeria Currency: "+currency);
-
-            }
         }
+
+
 
     }
 }

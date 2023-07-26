@@ -4,18 +4,20 @@ import io.cucumber.java.hu.Ha;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import javax.swing.*;
+import java.util.*;
 
 public class Practical {
     public static void main(String[] args) {
 
         WebDriverManager.chromedriver().setup();
         WebDriver driver = new ChromeDriver();
+        ChromeOptions option = new ChromeOptions();
+        option.setHeadless(true);
 
         driver.get("https://opensource-demo.orangehrmlive.com");
 
@@ -24,20 +26,12 @@ public class Practical {
 
         driver.findElement(By.xpath("//a[text()='OrangeHRM, Inc']")).click();
 
-        Set<String> winIDs = driver.getWindowHandles();
+        Set<String> windows = driver.getWindowHandles();
+        Iterator<String> it = windows.iterator();
+        String parent = it.next();
 
-
-
-        List<String> winds = new ArrayList<>(winIDs);
-        String winStr1 = winds.get(0);
-        String winStr2 = winds.get(1);
-
-        driver.switchTo().window(winStr1);
-        System.out.println("Page Title1: "+driver.getTitle());
-
-        driver.switchTo().window(winStr2);
-        System.out.println("Page Title2: "+driver.getTitle());
-
-        driver.quit();
+        for (String ele:windows){
+            String windowName = driver.switchTo().window(parent).getTitle();
+        }
     }
 }

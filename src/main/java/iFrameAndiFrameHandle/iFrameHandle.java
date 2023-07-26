@@ -4,7 +4,9 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 
+import java.io.FileReader;
 import java.time.Duration;
 
 public class iFrameHandle {
@@ -15,9 +17,11 @@ public class iFrameHandle {
         *
         * */
 
-        WebDriverManager.chromedriver().setup();
-        WebDriver driver = new ChromeDriver();
-        driver.manage().window().maximize();
+//        WebDriverManager.chromedriver().setup();
+//        WebDriver driver = new ChromeDriver();
+//        driver.manage().window().maximize();
+        WebDriverManager.firefoxdriver().setup();
+        WebDriver driver = new FirefoxDriver();
 
         driver.get("https://selenium.dev/selenium/docs/api/java/index.html?overview-summary.html");
 
