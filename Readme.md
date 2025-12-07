@@ -2,6 +2,7 @@
 
 *A UI & API automation tool for testing and validation*
 
+---
 
 ## 🚀 What is this?
 
