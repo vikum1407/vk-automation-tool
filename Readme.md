@@ -1,10 +1,7 @@
----
-
-# 🔧 vk-automation-tool
+### 🔧 vk-automation-tool
 
 *A UI & API automation tool for testing and validation*
 
----
 
 ## 🚀 What is this?
 
