@@ -21,11 +21,11 @@ public class NormalDropDown {
 
         driver.manage().window().maximize();
 
-        driver.findElement(By.xpath("//*[@class='btn btn-black navbar-btn']")).click();
+        driver.findElement(By.xpath("//*[@class='btn btn-black navbar-btn']")).click(); //registration button
     //    String headers = driver.findElement(By.xpath("(//h3[normalize-space()='Register for OpenCart account'])[1]")).getText();
     //    Assert.assertEquals(headers,"Register for OpenCart account");
 
-        WebElement countryDrp = driver.findElement(By.xpath("(//select[@id='input-country'])[1]"));
+        WebElement countryDrp = driver.findElement(By.xpath("(//select[@id='input-country'])[1]")); //country button
 
         Select options = new Select(countryDrp);
         List<WebElement> allOptions = options.getOptions();

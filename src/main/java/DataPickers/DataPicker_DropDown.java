@@ -9,14 +9,19 @@ import org.openqa.selenium.support.ui.Select;
 
 import java.time.Duration;
 import java.util.List;
+import java.util.logging.LogManager;
+import java.util.logging.Logger;
 
 public class DataPicker_DropDown {
 
     public static void main(String[] args) {
 
+
+
         WebDriverManager.chromedriver().setup();
         WebDriver driver = new ChromeDriver();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+
 
         driver.get("https://www.dummyticket.com/dummy-ticket-for-visa-application");
         driver.manage().window().maximize();

@@ -6,6 +6,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 
 public class Alerts {
 
@@ -44,6 +45,7 @@ public class Alerts {
         Thread.sleep(3000);
         alertWindow.accept();
 
+        driver.quit();
 
     }
 }

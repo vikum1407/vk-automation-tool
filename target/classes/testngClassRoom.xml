@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="TestNG Class Room">
+
+    <listeners>
+        <listener class-name="TestNGClassRoom.Listeners"></listener>
+    </listeners>
+
+    <test name="LoginByEmail">
+        <classes>
+            <class name="TestNGClassRoom.TestNGExecution">
+                <methods>
+                    <include name="LoginByEmail"></include>
+                    <exclude name="LoginbyFacebook"></exclude>
+                    //this is not executed
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+
+</suite>
+

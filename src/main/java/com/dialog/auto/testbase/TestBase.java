@@ -10,6 +10,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.time.Duration;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
@@ -18,8 +19,6 @@ public class TestBase {
     public static Properties prop;
     public static WebDriver driver;
 
-    //ChromeOptions options = new ChromeOptions();
-    //options.addArguments("");
 
     public TestBase(){
         try {
@@ -50,12 +49,9 @@ public class TestBase {
 
         driver.manage().window().maximize();
         driver.manage().deleteAllCookies();
-        driver.manage().timeouts().implicitlyWait(TestUtil.IMPLICITY_WAIT, TimeUnit.MILLISECONDS);
-        //driver.manage().timeouts().pageLoadTimeout(TestUtil.PAGE_LOAD_TIMEOUT, TimeUnit.MILLISECONDS);
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(TestUtil.IMPLICITY_WAIT));
+        driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(TestUtil.PAGE_LOAD_TIMEOUT));
 
         driver.get(prop.getProperty("url"));
     }
-
-
-
 }

@@ -17,3 +17,13 @@
         </classes>
     </test>
 </suite>
+
+<!--- If we need to run test in parellel, we can use master xml file to call one or multiple xml file as follows
+
+<suite name="MasterTestSuite" >
+<suite-files>
+    <suite-file path=""></suite-file>
+</suite-files>
+</suite>
+
+-->
