@@ -4,9 +4,6 @@
 
 *A UI & API automation tool for testing and validation*
 
-![vk-automation-tool banner](https://raw.githubusercontent.com/vikum1407/vk-automation-tool/main/screenshots/banner.png)
-*(Optional: add your own banner / logo to make it more visual)*
-
 ---
 
 ## 🚀 What is this?
